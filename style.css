@@ -97,6 +97,26 @@ body {
   margin: 0 auto;
 }
 
+.get-started-btn {
+  margin-top: 24px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: #EBDB15;
+  color: #5D070D;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 45px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #22222222;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.get-started-btn:hover {
+  background: #5D070D;
+  color: #EBDB15;
+  transform: scale(1.04);
+}
+
 .tech-doc-section {
   padding: 60px 0 40px 0;
   background: #fff;
