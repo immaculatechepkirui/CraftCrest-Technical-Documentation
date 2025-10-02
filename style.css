@@ -56,7 +56,6 @@ body {
   color: var(--maroon);
 }
 
-/* HOME SECTION */
 .home-section {
   position: relative;
   height: 400px;
@@ -98,7 +97,6 @@ body {
   margin: 0 auto;
 }
 
-/* TECHNICAL DOC SECTION */
 .tech-doc-section {
   padding: 60px 0 40px 0;
   background: #fff;
@@ -227,7 +225,6 @@ body {
   transition: opacity 0.6s cubic-bezier(0.23,1,0.32,1);
 }
 
-/* USER GUIDES SECTION */
 .user-guides-section {
   background: #fff;
   padding: 60px 0 40px 0;
