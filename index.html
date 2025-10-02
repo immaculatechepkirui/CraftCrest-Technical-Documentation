@@ -1,107 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CraftCrest Technical Documentation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <nav class="navbar">
-    <div class="logo">CraftCrest</div>
+    <div class="nav-logo">
+      <img src="images/craftcrest-logo.png" alt="CraftCrest Logo"/>
+    </div>
     <ul class="nav-links">
-      <li><a href="#">Overview</a></li>
-      <li><a href="#">User Flows</a></li>
-      <li><a href="#">Artisan Journey</a></li>
-      <li><a href="#">Tech Stack</a></li>
-      <li><a href="#">API</a></li>
-      <li><a href="#">Support</a></li>
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#technical-doc" class="nav-link">Technical Documentation</a></li>
+      <li><a href="#user-guides" class="nav-link">User Guides</a></li>
+      <li><a href="#our-team" class="nav-link">Our Team</a></li>
+      <li><a href="#footer" class="nav-link">Contact</a></li>
     </ul>
-    <button class="cta-btn">Explore Full Guide</button>
   </nav>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>CraftCrest Technical Documentation</h1>
-      <p>Developer Handbook & Implementation Guide</p>
-      <a href="#" class="hero-btn">Explore Full Guide</a>
-      <div class="version">Version 1.0 | Last Updated: October 2nd, 2025</div>
-    </div>
-    <div class="hero-image">
-      <!-- You can add an illustration or SVG here if you want -->
-      <img src="assets/phone-doc.svg" alt="Documentation Illustration" />
-    </div>
-  </header>
-  <section class="about">
-    <h2>About CraftCrest</h2>
-    <div class="user-type">
-      <span>Choose User Type:</span>
-      <span class="flow">Artisan → Registration & Login → Password Reset</span>
-      <span class="flow">Buyer → Registration & Login → Password Reset</span>
-    </div>
-    <p>
-      CraftCrest is a comprehensive mobile app connecting local artisans and buyers in Kenya, supporting registration, onboarding, secure payments, and custom order workflows.
-    </p>
-  </section>
-  <section class="workflow">
-    <h2>Artisan Workflow</h2>
-    <div class="workflow-grid">
-      <div class="workflow-card">Profile Setup & Onboarding</div>
-      <div class="workflow-card">Livestream Sales (Promotions)</div>
-      <div class="workflow-card">Location and Proximity (Product Reach)</div>
-      <div class="workflow-card">Portfolio Upload (User Showcase)</div>
+  
+  <section id="home" class="home-section">
+    <div class="home-bg"></div>
+    <div class="home-content">
+      <h1 class="home-title">CraftCrest</h1>
+      <p class="home-desc">
+        A comprehensive digital platform connecting Kenyan artisans with buyers, promoting cultural craftsmanship and sustainable business growth.
+      </p>
     </div>
   </section>
-  <section class="specs">
-    <h2>Technical Specifications</h2>
-    <div class="specs-grid">
-      <div class="specs-card">
-        <h3>Frontend</h3>
-        <ul>
-          <li>React Native</li>
-          <li>Expo</li>
-        </ul>
+
+  <!-- Technical Documentation Section -->
+  <section id="technical-doc" class="tech-doc-section">
+    <h2 class="section-title">Technical Documentation</h2>
+    <p class="section-subtitle">Comprehensive technical overview of CraftCrest's architecture, APIs, and implementation details</p>
+    <div class="tech-doc-buttons">
+      <button class="tech-btn active" id="app-arch-btn">Application Architecture</button>
+      <button class="tech-btn" id="data-flow-btn">Data Flow Architecture</button>
+    </div>
+    <div class="card-container" id="tech-cards">
+
+    </div>
+  </section>
+
+
+  <section id="user-guides" class="user-guides-section">
+    <h2 class="section-title">User Guides</h2>
+    <div class="user-guides-content">
+      <div class="user-guides-left">
+        <div class="guide-item" data-guide="artisans">
+          <div class="guide-title">
+            <span class="guide-main">Artisans</span>
+            <span class="guide-sub">Sellers</span>
+          </div>
+          <span class="guide-arrow" id="artisans-arrow">&#x25B6;</span>
+        </div>
+        <div class="guide-item" data-guide="customers">
+          <div class="guide-title">
+            <span class="guide-main">Customers</span>
+            <span class="guide-sub">Buyers</span>
+          </div>
+          <span class="guide-arrow" id="customers-arrow">&#x25B6;</span>
+        </div>
       </div>
-      <div class="specs-card">
-        <h3>Backend</h3>
-        <ul>
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>MongoDB</li>
-        </ul>
-      </div>
-      <div class="specs-card">
-        <h3>Deployment</h3>
-        <ul>
-          <li>App Store</li>
-          <li>Google Play</li>
-          <li>Docker</li>
-        </ul>
-      </div>
-      <div class="specs-card">
-        <h3>API / API Gateway</h3>
-        <ul>
-          <li>RESTful API</li>
-          <li>Authentication</li>
-        </ul>
+      <div class="user-guides-right" id="guides-right">
+   
       </div>
     </div>
   </section>
-  <section class="notes">
-    <div class="note">
-      <strong>Messki Note:</strong> All payments managed by our platform using M-Pesa B2C for secure, reliable transactions. No third-party integrations.
+
+  <section id="our-team" class="team-section">
+    <h2 class="section-title team-title">Our Team</h2>
+    <div class="carousel-container">
+      <button class="nav-arrow left" id="team-left">&#x276E;</button>
+      <div class="carousel-track" id="carousel-track">
+ 
+      </div>
+      <button class="nav-arrow right" id="team-right">&#x276F;</button>
     </div>
-    <div class="note">
-      <strong>Onboarded State?</strong> Only verified artisans and buyers after onboarding can access inventory, upload products, and transact.
+    <div class="member-info">
+      <h2 class="member-name"></h2>
+      <p class="member-role"></p>
+    </div>
+    <div class="dots" id="team-dots">
+
     </div>
   </section>
-  <section class="faq">
-    <h2>Troubabbobloning & FAQ</h2>
-    <p>Common Questions? <a href="mailto:support@craftcrest.com">Contact Support</a></p>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+
+  <footer id="footer" class="footer-section">
+    <div class="footer-content">
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <div class="contact-item">
+          <span class="footer-icon"><img src="images/email-icon.png" alt="Email" /></span>
+          <span>Email Us</span>
+          <span class="footer-link">craftcr@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="footer-icon"><img src="images/phone-icon.png" alt="Phone" /></span>
+          <span>Call Us</span>
+          <span class="footer-link">+254775657892</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/craftcrest" target="_blank"><img src="images/facebook-icon.png" alt="Facebook"/></a>
+          <a href="https://twitter.com/craftcrest" target="_blank"><img src="images/twitter-icon.png" alt="Twitter"/></a>
+          <a href="https://instagram.com/craftcrest" target="_blank"><img src="images/instagram-icon.png" alt="Instagram"/></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home" class="footer-nav-link">Home</a></li>
+          <li><a href="#technical-doc" class="footer-nav-link">Technical Documentation</a></li>
+          <li><a href="#user-guides" class="footer-nav-link">User Guides</a></li>
+          <li><a href="#our-team" class="footer-nav-link">Our Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="images/craftcrest-logo.png" alt="CraftCrest Logo"/>
+        </div>
+        <div class="footer-name">CraftCrest</div>
+        <div class="footer-desc">Discover local artisans, embrace unique creations.</div>
+      </div>
     </div>
-    <div class="footer-note">Report Page Error: info@craftcrestdocs.com</div>
-    <div class="footer-version">CraftCrest Documentation &copy; 2025</div>
-  </section>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
