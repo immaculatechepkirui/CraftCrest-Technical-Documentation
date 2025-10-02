@@ -1,7 +1,7 @@
 const appArchCards = [
   {
     title: "Backend Layer",
-    image: "images/backend-layer.jpg?raw=true",
+    image: "images/backend-layer.jpg",
     content: `<ul>
       <li>Django Framework</li>
       <li>RESTful API Design</li>
@@ -93,10 +93,8 @@ dataFlowBtn.addEventListener('click', () => {
   appArchBtn.classList.remove('active');
   renderTechCards(dataFlowCards);
 });
-// Initial render
 renderTechCards(appArchCards);
 
-// ---- USER GUIDES SECTION ----
 const artisanGuideContent = `
   <div>
     <div>Choose 'Artisan' during initial onboarding</div>
