@@ -73,6 +73,7 @@ body {
   background: url('https://t4.ftcdn.net/jpg/02/91/76/77/360_F_291767784_qAoDQo45GJnAG5t0x4Qu03u6oxN8W7ND.jpg') center/cover no-repeat;
   z-index: 1;
   opacity: 0.9;
+  height: 100vh;
 }
 
 .home-content {
@@ -84,7 +85,7 @@ body {
 
 .home-title {
   font-size: 4rem;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--yellow);
   margin-bottom: 22px;
 }
@@ -106,7 +107,7 @@ body {
 
 .section-title {
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: 600;
   margin-bottom: 12px;
   color: #181818;
 }
@@ -115,7 +116,7 @@ body {
   font-size: 1.15rem;
   margin-bottom: 34px;
   color: #333;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .tech-doc-buttons {
