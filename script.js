@@ -36,7 +36,7 @@ const appArchCards = [
 const dataFlowCards = [
   {
     title: "Artisan Flow",
-    image: "images/artisan-flow.png",
+    image: "images/artisnas.jpg",
     content: `<ul>
       <li>Registration &amp; Verification</li>
       <li>Portfolio Upload &amp; Storage</li>
@@ -46,7 +46,7 @@ const dataFlowCards = [
   },
   {
     title: "Buyer Flow",
-    image: "images/buyer-flow.png",
+    image: "images/artisnas.jpg",
     content: `<ul>
       <li>Location-based Discovery</li>
       <li>Product Browsing</li>
