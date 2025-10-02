@@ -197,7 +197,7 @@ const teamMembers = [
     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08G4FL7L9J-c8e363d90ebb-512"
   },
   {
-    name: "Daniella Syombua",
+    name: "Daniella Mutuku",
     role: "Software Engineer",
     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08C0DF80S1-3653aa026291-512"
   }
