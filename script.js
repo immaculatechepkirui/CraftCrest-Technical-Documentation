@@ -2,13 +2,12 @@ const appArchCards = [
   {
     title: "Backend Layer",
     image: "images/backend-layer.jpg",
-    content: `<ul>
+    content: 
       <li>Django Framework</li>
       <li>RESTful API Design</li>
       <li>PostgreSQL Database</li>
       <li>PBKDF2 Password Hashing</li>
       <li>Session Management</li>
-    </ul>`
   },
   {
     title: "External APIs",
