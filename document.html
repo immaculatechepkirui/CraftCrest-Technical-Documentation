@@ -1,1 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftCrest Documentation</title>
+    <link rel="stylesheet" href="document.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="dark">
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="images/cc-logo.png" alt="CraftCrest Logo" />
+                <span class="sidebar-title">CraftCrest</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#version-overview" class="active"><i class="fas fa-history"></i>Version History</a></li>
+                <li><a href="#getting-started"><i class="fas fa-rocket"></i>Getting Started</a></li>
+                <li><a href="#system-flows"><i class="fas fa-project-diagram"></i>System Flows</a></li>
+                <li><a href="#system-overview"><i class="fas fa-sitemap"></i>System Overview</a></li>
+                <li><a href="#database"><i class="fas fa-database"></i>Database</a></li>
+                <li><a href="#frontend"><i class="fab fa-react"></i>Frontend</a></li>
+                <li><a href="#backend"><i class="fas fa-server"></i>Backend</a></li>
+                <li><a href="#deployment"><i class="fas fa-cloud-upload-alt"></i>Deployment</a></li>
+                <li><a href="#security-qa-glossary"><i class="fas fa-shield-alt"></i>Security</a></li>
+            </ul>
+        </aside>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Version History & Overview -->
+            <section id="version-overview" class="section active">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h3 class="hello" style="color: #EBDB15;">CraftCrest Documentation</h3>
+                            <h3 class="profession" style="color: #EBDB15;">Artisan's Marketplace</h3>
+                            <div class="doc-section">
+                                <h4 class="yellow-heading">Version History</h4>
+                                <p>
+                                    <strong>Version 1.0</strong> is the initial documentation for CraftCrest, a mobile app designed for artisans and buyers in Kenya to facilitate seamless transactions and interactions. This document covers the app's onboarding processes, inventory management, customer interaction, and payment handling.
+                                </p>
+                            </div>
+                            <div class="doc-section">
+                                <h4 class="yellow-heading">Overview</h4>
+                                <p>
+                                    CraftCrest is a digital platform tailored to connect local Kenyan artisans with buyers, fostering a sustainable ecosystem that celebrates cultural craftsmanship. The app enables artisans to showcase their work, accept custom orders, and receive secure payments through M-Pesa, enhancing economic empowerment and providing buyers with authentic and personalized experiences.
+                                </p>
+                                <p>This documentation outlines the comprehensive onboarding process for both artisans and buyers, inventory management features, and secure payment methods available within the CraftCrest system.</p>
+                            </div>
+                            <div class="doc-section">
+                                <h4 class="yellow-heading">Key Features</h4>
+                                <ol class="key-features-list">
+                                    <li>
+                                        <strong>Artisan Onboarding</strong><br>
+                                        <span>Description:</span> Artisans register on the platform by providing identification, portfolios, and demonstrating their skills through images.
+                                    </li>
+                                    <li>
+                                        <strong>Portfolio Showcase</strong><br>
+                                        <span>Description:</span> Artisans create rich profiles featuring high-resolution images of their work and client ratings.
+                                    </li>
+                                    <li>
+                                        <strong>Custom Design Request Submission</strong><br>
+                                        <span>Description:</span> Buyers can submit detailed custom orders with specific instructions and reference images.
+                                    </li>
+                                    <li>
+                                        <strong>Secure Payment</strong><br>
+                                        <span>Description:</span> All transactions are handled via M-Pesa, with funds held securely until delivery confirmation.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="home-img padd-15">
+                            <img src="images/craftcrest-doc-hero.png" alt="CraftCrest Documentation Hero" />
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Getting Started -->
+            <section id="getting-started" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Getting Started</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Prerequisites</h4>
+                        <ul>
+                            <li><strong>Hardware:</strong> Mobile devices for users (smartphones with GPS)</li>
+                            <li><strong>Software:</strong>
+                                <ul>
+                                    <li>Frontend: Next.js (React framework for web and mobile app front-end)</li>
+                                    <li>Backend: Python 3.10+ (Django REST Framework for API)</li>
+                                    <li>Database: PostgreSQL 14+</li>
+                                </ul>
+                            </li>
+                            <li><strong>Network:</strong> Stable internet connection (Wi-Fi or mobile data) for app usage and API calls</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Installation/Setup</h4>
+                        <h5>Backend</h5>
+                        <ol>
+                            <li>Clone the CraftCrest backend repository</li>
+                            <li>Install dependencies (Python packages, database drivers)</li>
+                            <li>Configure environment variables for database connections, M-Pesa API credentials, LocationIQ API keys</li>
+                            <li>Run database migrations for PostgreSQL setup</li>
+                            <li>Start the backend API server</li>
+                        </ol>
+                        <h5>Frontend</h5>
+                        <ol>
+                            <li>Clone the CraftCrest frontend repository</li>
+                            <li>Install Node.js dependencies for Next.js project</li>
+                            <li>Configure API endpoints and environment variables</li>
+                            <li>Run the frontend development server for testing locally or build for production deployment</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Flows -->
+            <section id="system-flows" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>System Flows</h2>
+                    </div>
+                    <div class="flow-preview">
+                        <div class="flow-card" onclick="window.open('https://figma.com/design/BipjmE8dRWqmCXluFczIDA/CraftCrest---User-Flow?node-id=0-1&p=f&t=ElnKomPxEZgTfqMe-0','_blank')" title="View Artisan User Flow on Figma">
+                            <img src="images/artisan-user-flow-preview.png" alt="Artisan User Flow" />
+                            <span class="flow-label">Artisan User Flow</span>
+                        </div>
+                        <div class="flow-card" onclick="window.open('https://figma.com/design/BipjmE8dRWqmCXluFczIDA/CraftCrest---User-Flow?node-id=0-1&p=f&t=ElnKomPxEZgTfqMe-0','_blank')" title="View Buyer User Flow on Figma">
+                            <img src="images/buyer-user-flow-preview.png" alt="Buyer User Flow" />
+                            <span class="flow-label">Buyer User Flow</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Overview -->
+            <section id="system-overview" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>System Overview</h2>
+                    </div>
+                    <div class="overview-card" onclick="window.open('https://docs.google.com/document/d/1rKQGGgYneGNo2GBzJk_4Cw7zw0jgw5c8FuxSodBwll4/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View System Architecture Diagram">
+                        <img src="images/system-architecture-preview.png" alt="System Architecture Diagram" />
+                        <span class="overview-label">System Architecture Diagram</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Database -->
+            <section id="database" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Database</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Type</h4>
+                        <p><strong>PostgreSQL</strong></p>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Table Descriptions</h4>
+                        <ul>
+                            <li><strong>users:</strong> Contains login and registration data such as full name, email, phone, password hash, user type (artisan or buyer), and timestamps.</li>
+                            <li><strong>artisan_profiles:</strong> Profile information including full name, gender, national ID, physical address, portfolio images (minimum 10), probation start/end, location coordinates (latitude and longitude), and performance metrics (order fulfillment rate, return rate, average rating, completed orders count, active days).</li>
+                            <li><strong>buyer_profiles:</strong> Temporary session-based location data collected dynamically per app usage to support "artisans near me" feature using Haversine formula; no permanent storage of buyer location.</li>
+                            <li><strong>products:</strong> Artisans' product inventory entries including product name, description, category (e.g., pottery, basketry, tailoring), price, image links, availability, and whether product is custom or ready-made.</li>
+                            <li><strong>custom_requests:</strong> Records buyer custom orders referencing products, with fields for request details, uploaded reference images, artisan quotation price, acceptance/rejection status, and communication logs.</li>
+                            <li><strong>orders:</strong> Tracks confirmed orders with states for acceptance, completion by artisan, buyer delivery confirmation, and payment release tracking for escrow handling.</li>
+                            <li><strong>payments:</strong> Handles recording of M-Pesa payment transactions securely, including payment capture on order creation, holding funds until buyer confirmation post-delivery, and releasing payments to artisans.</li>
+                            <li><strong>ratings:</strong> Stores buyer-submitted ratings and reviews for artisans and individual products, aggregated for artisan verification badge qualification.</li>
+                        </ul>
+                        <div class="database-preview" onclick="window.open('https://docs.google.com/document/d/1rKQGGgYneGNo2GBzJk_4Cw7zw0jgw5c8FuxSodBwll4/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View Database Diagram">
+                            <img src="images/database-relationship-preview.png" alt="Database Relationship Diagram" />
+                            <span class="db-label">Database Relationship Tables</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Frontend -->
+            <section id="frontend" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Frontend</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Language and Frameworks</h4>
+                        <ul>
+                            <li><strong>TypeScript:</strong> For type safety and scalability.</li>
+                            <li><strong>Next.js:</strong> For server-side rendering and static site generation.</li>
+                            <li><strong>Tailwind CSS:</strong> For responsive, utility-first styling.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Routing</h4>
+                        <ul>
+                            <li>File-Based Routing: Defined in <code>/pages</code> (<code>/pages/dashboard.tsx</code>) with dynamic routes.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Folder Structure</h4>
+                        <ul>
+                            <li><code>/src</code></li>
+                            <li><code>/components</code>: Reusable UI elements (e.g., <code>RegistrationForm.tsx</code>).</li>
+                            <li><code>/pages</code>: Route-specific pages (e.g., <code>Dashboard.tsx</code>, <code>Catalog.tsx</code>).</li>
+                            <li><code>/utils</code>: API call logic.</li>
+                            <li><code>/public</code>: Images.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Testing</h4>
+                        <ul>
+                            <li><strong>Jest and ts-jest:</strong> Unit tests (e.g., <code>test/components/RegistrationForm.test.tsx</code>).</li>
+                            <li>Run Tests: <code>npm test</code></li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Deployment</h4>
+                        <ul>
+                            <li><strong>Platform:</strong> Vercel</li>
+                            <li><strong>Instructions:</strong>
+                                <ul>
+                                    <li>Install dependencies: <code>npm install</code></li>
+                                    <li>Build project: <code>npm run build</code></li>
+                                    <li>Deploy: <code>vercel --prod</code> or push to GitHub repo linked to Vercel.</li>
+                                    <li>Verify at <a href="https://craftcrestapp.vercel.app/" target="_blank">https://craftcrestapp.vercel.app/</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Backend -->
+            <section id="backend" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Backend</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Language and Frameworks</h4>
+                        <ul>
+                            <li><strong>Python:</strong> For robust, scalable backend development with a rich ecosystem.</li>
+                            <li><strong>Django:</strong> High-level, secure web framework with built-in ORM, admin panel, and authentication system.</li>
+                            <li><strong>Django REST Framework (DRF):</strong> For building RESTful APIs to serve frontend applications securely and efficiently.</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Routing</h4>
+                        <ul>
+                            <li>URL Routing defined in <code>urls.py</code></li>
+                            <li>Example route:<br>
+                                <code>path('api/register/', views.register, name='register')</code>
+                            </li>
+                            <li>Supports dynamic routes for resource-specific operations (e.g., <code>/api/artisans/&lt;int:id&gt;/</code>)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Folder Structure</h4>
+                        <ul>
+                            <li><code>/craftcrest-backend</code></li>
+                            <li><code>/craftcrest</code> &mdash; Main app directory
+                                <ul>
+                                    <li><code>/views</code> &mdash; Business logic, request handlers</li>
+                                    <li><code>/models</code> &mdash; Database models representing users, products, orders, etc.</li>
+                                    <li><code>/serializers</code> &mdash; Data serialization and validation for API input/output</li>
+                                    <li><code>/urls</code> &mdash; Route definitions</li>
+                                    <li><code>/permissions</code> &mdash; Custom permissions and access control logic</li>
+                                    <li><code>/tests</code> &mdash; Unit and integration tests</li>
+                                </ul>
+                            </li>
+                            <li><code>/static</code> &mdash; Static files if needed (e.g., images, docs)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Dependencies</h4>
+                        <ul>
+                            <li>Django REST Framework (DRF): For creating REST APIs</li>
+                            <li>psycopg2: PostgreSQL database adapter for Python</li>
+                            <li>djangorestframework-simplejwt or similar: JWT authentication for secured token-based access</li>
+                            <li>requests or similar for external API calls (e.g., M-Pesa, LocationIQ)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Testing</h4>
+                        <ul>
+                            <li>Framework: Django Test Framework</li>
+                            <li>Test location: <code>/craftcrest/tests/</code> or in corresponding app directories</li>
+                            <li>Run tests command: <code>python manage.py test</code></li>
+                            <li>Includes unit tests for models, views, serializers, and API endpoints</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Deployment</h4>
+                        <ul>
+                            <li>Platform: Recommended Heroku or any other cloud provider supporting Python/Django</li>
+                            <li>Instructions:
+                                <ul>
+                                    <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+                                    <li>Apply migrations: <code>python manage.py migrate</code></li>
+                                    <li>Collect static files (if applicable): <code>python manage.py collectstatic</code></li>
+                                    <li>Deploy using Git: <code>git push heroku main</code></li>
+                                    <li>Set environment variables for database URLs, M-Pesa and LocationIQ API credentials, Django settings.</li>
+                                    <li>Verify at <a href="https://craft-crest-1191648a42bc.herokuapp.com/api/" target="_blank">Heroku API</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deployment -->
+            <section id="deployment" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Deployment</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Frontend Deployment</h4>
+                        <ul>
+                            <li>Platform: Vercel</li>
+                            <li>Branch: Auto-deployment from main</li>
+                            <li>Environment Variables: Managed securely via .env in Vercel dashboard</li>
+                            <li>Build & Preview: Each push triggers preview builds for PRs and deploys on merge to main</li>
+                        </ul>
+                        <h4 class="yellow-heading">Backend Deployment</h4>
+                        <ul>
+                            <li>Platform: Django REST API deployed on Heroku</li>
+                            <li>Environment Variables: Configured in Heroku dashboard for security</li>
+                            <li>Scaling: Automatic scaling via Heroku dynos for increased demand</li>
+                        </ul>
+                        <h4 class="yellow-heading">CI/CD Pipeline</h4>
+                        <ul>
+                            <li>Tool: GitHub Actions</li>
+                            <li>Pre-Deployment: All codebases run tests, build, and lint checks before deploy</li>
+                            <li>Automation: Automatic deployment on merge to main</li>
+                            <li>Status: Build and test status visible in PRs and repository dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security, QA, Glossary -->
+            <section id="security-qa-glossary" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Security, Quality Assurance & Glossary</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Security</h4>
+                        <ul>
+                            <li><strong>Authentication:</strong> JWT: Token-based auth for API access.</li>
+                            <li><strong>Data Encryption:</strong> HTTPS: TLS for transport. AES: Encrypts sensitive data (e.g., passwords).</li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Quality Assurance</h4>
+                        <ul>
+                            <li><strong>Code Maintenance:</strong> Branching: Use main for production, develop for features, feature/* for tasks.</li>
+                            <li>Commits: Follow Conventional Commits (e.g, feat: add registration form).</li>
+                            <li>Review: PRs require 5 approvals via GitHub.</li>
+                            <li>Pull Requests: Write clear summary for each PR.</li>
+                        </ul>
+                        <ul>
+                            <li><strong>QA Process:</strong>
+                                <ul>
+                                    <li>Unit Tests: Jest for React and Pytest for Django (e.g., npm test).</li>
+                                    <li>Integration Tests: Postman for API (e.g., GET /api/users).</li>
+                                    <li>Manual Testing: Verify PWA form validation.</li>
+                                    <li>CI/CD Checks: GitHub Actions runs tests, lints (ESLint), and deploys only on pass.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">Glossary</h4>
+                        <ul>
+                            <li><strong>PWA:</strong> Progressive Web App for offline use.</li>
+                            <li><strong>JWT:</strong> JSON Web Token for authentication.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="document.js"></script>
+</body>
+</html>
