@@ -1,59 +1,51 @@
 const appArchCards = [
   {
-    title: "Backend Layer",
-    image: "images/backend-layer.jpg",
-    content: 
-      <li>Django Framework</li>
-      <li>RESTful API Design</li>
-      <li>PostgreSQL Database</li>
-      <li>PBKDF2 Password Hashing</li>
-      <li>Session Management</li>
+    title: 'Backend Layer',
+    image: 'images/backend-layer.jpg',
+    content: `Django Framework
+RESTful API Design
+PostgreSQL Database
+PBKDF2 Password Hashing
+Session Management`,
   },
   {
-    title: "External APIs",
-    image: "images/security.jpg",
-    content: `<ul>
-      <li>M-Pesa Daraja API</li>
-      <li>LocationIQ API</li>
-      <li>GPS Location Services</li>
-      <li>Real-time Notifications</li>
-    </ul>`
+    title: 'External APIs',
+    image: 'images/security.jpg',
+    content: `M-Pesa Daraja API
+LocationIQ API
+GPS Location Services
+Real-time Notifications`,
   },
   {
-    title: "Security Layer",
-    image: "images/1759388059722.jpg",
-    content: `<ul>
-      <li>Payment Escrow System</li>
-      <li>User Authentication</li>
-      <li>Data Encryption</li>
-      <li>Privacy Protection</li>
-      <li>Input Validation</li>
-    </ul>`
-  }
+    title: 'Security Layer',
+    image: 'images/1759388059722.jpg',
+    content: `Payment Escrow System
+User Authentication
+Data Encryption
+Privacy Protection
+Input Validation`,
+  },
 ];
 
 const dataFlowCards = [
   {
-    title: "Artisan Flow",
-    image: "images/artisnas.jpg",
-    content: `<ul>
-      <li>Registration &amp; Verification</li>
-      <li>Portfolio Upload &amp; Storage</li>
-      <li>Order Management</li>
-      <li>Payment Processing</li>
-    </ul>`
+    title: 'Artisan Flow',
+    image: 'images/artisnas.jpg',
+    content: `Registration & Verification
+Portfolio Upload & Storage
+Order Management
+Payment Processing`,
   },
   {
-    title: "Buyer Flow",
-    image: "images/artisnas.jpg",
-    content: `<ul>
-      <li>Location-based Discovery</li>
-      <li>Product Browsing</li>
-      <li>Order Placement</li>
-      <li>Payment &amp; Delivery</li>
-    </ul>`
-  }
+    title: 'Buyer Flow',
+    image: 'images/artisnas.jpg',
+    content: `Location-based Discovery
+Product Browsing
+Order Placement
+Payment & Delivery`,
+  },
 ];
+
 
 function renderTechCards(cards) {
   const container = document.getElementById('tech-cards');
