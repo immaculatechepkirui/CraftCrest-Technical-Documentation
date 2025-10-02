@@ -1,7 +1,7 @@
 const appArchCards = [
   {
     title: "Backend Layer",
-    image: "images/backend-layer.png",
+    image: "images/backend-layer.jpg?raw=true",
     content: `<ul>
       <li>Django Framework</li>
       <li>RESTful API Design</li>
