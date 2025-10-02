@@ -12,7 +12,7 @@ const appArchCards = [
   },
   {
     title: "External APIs",
-    image: "images/security.jpg?raw=true",
+    image: "images/security.jpg",
     content: `<ul>
       <li>M-Pesa Daraja API</li>
       <li>LocationIQ API</li>
@@ -22,7 +22,7 @@ const appArchCards = [
   },
   {
     title: "Security Layer",
-    image: "images/1759388059722.jpg?raw=true",
+    image: "images/1759388059722.jpg",
     content: `<ul>
       <li>Payment Escrow System</li>
       <li>User Authentication</li>
