@@ -173,7 +173,7 @@ const teamMembers = [
   {
     name: "Hani Azanaw",
     role: "Software Engineer",
-    image: "https://ca.slack-edge.com/T08BR1M9D6V-U08FVFZAMNE-37697b6ded26-512"
+    image: "images/hani-image.jpg"
   },
   {
     name: "Dorothy Mbakaya",
