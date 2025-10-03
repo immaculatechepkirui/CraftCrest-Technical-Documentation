@@ -266,15 +266,20 @@ body {
   margin-top: 15px;
 }
 .guide-item {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 22px;
   cursor: pointer;
+  position: relative;
+  min-height: 40px;
+  padding-right: 34px;
 }
 .guide-title {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  min-width: 120px;
 }
 .guide-main {
   font-size: 1.55rem;
@@ -289,12 +294,19 @@ body {
   margin-top: -3px;
 }
 .guide-arrow {
-  font-size: 2.8rem;
+  font-size: 1.65rem;
   color: var(--maroon);
   transition: transform 0.3s;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 26px;
+  text-align: center;
 }
 .guide-arrow.down {
-  transform: rotate(90deg);
+  transform: rotate(90deg) translateY(-50%);
 }
 
 .user-guides-right {
@@ -308,7 +320,14 @@ body {
   display: flex;
   align-items: flex-start;
 }
-
+.user-guides-left {
+  display: flex;
+  width: 170px;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 15px;
+  position: relative;
+}
 .team-section {
   background: #fff;
   padding: 70px 0 0 0;
