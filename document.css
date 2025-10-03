@@ -35,7 +35,7 @@ body {
     height: 65px;
     margin-bottom: 6px;
     object-fit: cover;
-    box-shadow: 0 1px 4px #5d070d70;
+    /* box-shadow: 0 1px 4px #5d070d70; */
 }
 .sidebar-title {
     color: #EBDB15;
