@@ -13,6 +13,8 @@
 
 body {
   background: #fff;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -58,28 +60,32 @@ body {
 
 .home-section {
   position: relative;
-  height: 400px;
+  height: 100vh; 
+  min-height: 100vh;
+  width: 100vw; 
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
-  overflow: hidden;
 }
 
 .home-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('https://t4.ftcdn.net/jpg/02/91/76/77/360_F_291767784_qAoDQo45GJnAG5t0x4Qu03u6oxN8W7ND.jpg') center/cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://t4.ftcdn.net/jpg/02/91/76/77/360_F_291767784_qAoDQo45GJnAG5t0x4Qu03u6oxN8W7ND.jpg') center center/cover no-repeat;
   z-index: 1;
   opacity: 0.9;
-  height: 100vh;
+  background-size: cover;
 }
 
 .home-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 0;
+  width: 100%;
 }
 
 .home-title {
