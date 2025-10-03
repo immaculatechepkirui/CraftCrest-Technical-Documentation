@@ -575,9 +575,7 @@ body {
 .footer-logo img {
   width: 65px;
   height: 65px;
-  /* border-radius: 50%; */
   margin-bottom: 7px;
-  /* background: var(--yellow); */
 }
 .footer-name {
   font-size: 1.25rem;
