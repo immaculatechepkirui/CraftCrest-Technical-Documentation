@@ -551,24 +551,25 @@ body {
 }
 
 .footer-social a i {
-  font-size: 24px; 
-  color: #555; 
-  margin: 0 10px; 
+  font-size: 24px;
+  color: #EBDB15; 
+  margin: 0 10px;
+  background: transparent;
+  border-radius: 50%;
+  transition: 
+    color 0.25s,
+    background 0.25s,
+    transform 0.4s;
+  padding: 10px;
+  display: inline-block;
 }
 
-.footer-social a i:hover {
-  color: #ffffff;
+.footer-social a:hover i {
+  color: #5D070D;
+  background: #EBDB15; 
+  transform: rotate(360deg);
 }
 
-.footer-social img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(1.2) drop-shadow(0 2px 8px #222);
-  transition: filter 0.2s;
-}
-.footer-social a:hover img {
-  filter: brightness(2.5) drop-shadow(0 0 5px var(--yellow));
-}
 .footer-links ul {
   list-style: none;
   margin-top: 6px;
