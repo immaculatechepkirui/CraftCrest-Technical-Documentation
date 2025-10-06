@@ -59,8 +59,8 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     text-decoration: none;
-    border-: 3px solid transparent;
-    transition: background 0.2s, color 0.2s, border- 0.2s;
+    border-left: 3px solid transparent;
+    transition: background 0.2s, color 0.2s, border-left 0.2s;
 }
 .sidebar-nav a i {
     margin-right: 12px;
@@ -70,12 +70,12 @@ body {
 .sidebar-nav a:hover {
     background: #5D070D;
     color: #EBDB15;
-    border-: 3px solid #EBDB15;
+    border-left: 3px solid #EBDB15;
 }
 .main-content {
     flex: 1;
     margin-left: 220px;
-    padding: 35px 8px 20px 8px;
+    padding: 50px 15px 35px 15px; /* <-- Only 15px space between sidebar and content */
     min-width: 0;
     background: #111;
     position: relative;
