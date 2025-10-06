@@ -152,7 +152,7 @@
                     <div class="doc-section">
                         <h4 class="yellow-heading">Table Descriptions</h4>
                         <ul>
-                            <li><strong>users:</strong> Contains login and registration data such as full name, email, phone, password hash, user type (artisan or buyer), and timestamps.</li>
+                            <li><strong>users:</strong> Contains login and registration data, including full name, email, phone, password hash, user type (artisan or buyer), and timestamps.</li>
                             <li><strong>artisan_profiles:</strong> Profile information including full name, gender, national ID, physical address, portfolio images (minimum 10), probation start/end, location coordinates (latitude and longitude), and performance metrics (order fulfillment rate, return rate, average rating, completed orders count, active days).</li>
                             <li><strong>buyer_profiles:</strong> Temporary session-based location data collected dynamically per app usage to support "artisans near me" feature using Haversine formula; no permanent storage of buyer location.</li>
                             <li><strong>products:</strong> Artisans' product inventory entries including product name, description, category (e.g., pottery, basketry, tailoring), price, image links, availability, and whether product is custom or ready-made.</li>
@@ -333,7 +333,7 @@ class UserModelTest(TestCase):
                     <div class="doc-section">
                         <h4 class="yellow-heading">API Documentation</h4>
                         <p>
-                            <a href="https://craft-crest-1191648a42bc.herokuapp.com/api/swagger/" target="_blank" style="color:#EBDB15;font-weight:bold;">View the Swagger/OpenAPI documentation</a>
+                            <a href="https://craft-crest-1191648a42bc.herokuapp.com/api/schema/swagger-ui/" target="_blank" style="color:#EBDB15;font-weight:bold;">View the Swagger/OpenAPI documentation</a>
                         </p>
                     </div>
                 </div>
@@ -394,7 +394,7 @@ class UserModelTest(TestCase):
                                 <ul>
                                     <li>Unit Tests: Jest for React and Pytest for Django (e.g., npm test).</li>
                                     <li>Integration Tests: Postman for API (e.g., GET /api/users).</li>
-                                    <li>Manual Testing: Verify PWA form validation.</li>
+                                    <li>Manual Testing: Verify Mobile form validation.</li>
                                     <li>CI/CD Checks: GitHub Actions runs tests, lints (ESLint), and deploys only on pass. </li>
                                 </ul>
                             </li>
@@ -428,15 +428,92 @@ class UserModelTest(TestCase):
                         <h4 class="yellow-heading">Python Example</h4>
 <pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
 class ArtisanProfile(models.Model):
-    full_name = models.CharField(max_length=100)
-    national_id = models.CharField(max_length=20)
-    # ...
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        limit_choices_to={'user_type': 'ARTISAN'}
+    )
+    fulfillment_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    rejection_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    average_rating = models.DecimalField(max_digits=3, decimal_places=1, default=0)
+    days_active = models.PositiveIntegerField(default=0)
+    completed_orders = models.PositiveIntegerField(default=0)
+    is_verified = models.BooleanField(default=False)
+    weekly_order_count = models.PositiveIntegerField(default=0)
+    order_value_limit = models.DecimalField(max_digits=10, decimal_places=2, default=2000, null=True, blank=True)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True)
+
+    def __str__(self):
+        return f"Artisan Profile for {self.user.email}"
+
+    def clean(self):
+        if self.user.user_type != 'ARTISAN':
+            raise ValidationError("ArtisanProfile can only be linked to an artisan user.")
+
+    def update_verification_status(self):
+        if (
+            self.fulfillment_rate >= 90
+            and self.rejection_rate <= 10
+            and self.average_rating >= 4.0
+            and self.days_active >= 85
+            and self.completed_orders >= 10
+        ):
+            self.is_verified = True
+            self.order_value_limit = None
+        else:
+            self.is_verified = False
+            self.order_value_limit = 2000
+        self.save()
+
+    def can_take_order(self, order_value):
+        if self.is_verified:
+            return True
+        return order_value <= 2000 and self.weekly_order_count < 5
+
 </code></pre>
-                        <h4 class="yellow-heading">React/JS/TS Example</h4>
+                        <h4 class="yellow-heading">Next/JS/TS Example</h4>
 <pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
-function RegistrationForm({ onSubmit }) {
-  // ...
-}
+'use client';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import Image from 'next/image';
+import Button, { ButtonVariants } from "../shared-components/Button";
+import useLogin from '../hooks/useFetchLogin';
+export default function LoginPage() {
+  const router = useRouter();
+  const { login, loading, error } = useLogin();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [showPassword, setShowPassword] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setSuccessMessage(null);
+  };
+  const handleSubmit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const { email, password } = formData;
+    if (!email.trim() || !password) {
+      setSuccessMessage(null);
+      return;
+    }
+    const result = await login({ email, password });
+    if (result?.token) {
+      setSuccessMessage('Login successful! Redirecting...');
+      setTimeout(() => {
+        router.push('/dashboard');
+      }, 1000);
+    } else {
+      setSuccessMessage(null);
+    }
+  };
+  const handleButtonClick = () => {
+    if (!loading) {
+      handleSubmit();
+    }
+  };
 </code></pre>
                     </div>
                 </div>
