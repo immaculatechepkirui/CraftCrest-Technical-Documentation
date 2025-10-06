@@ -74,8 +74,8 @@ body {
 }
 .main-content {
     flex: 1;
-    margin-left: 220px;
-    padding: 24px 4px 18px 4px; /* minimal space between sidebar and content */
+    margin-left: 120px;
+    /* padding: 24px 4px 18px 4px; */
     min-width: 0;
     background: #111;
     position: relative;
