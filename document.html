@@ -426,38 +426,6 @@ class UserModelTest(TestCase):
                             <li>Frontend: camelCase (variables/functions), PascalCase (components), SCREAMING_SNAKE_CASE (constants).</li>
                             <li>Backend: CamelCase (classes/interfaces), snake_case (variables/functions), descriptive names.</li>
                         </ul>
-                        <h4 class="yellow-heading">Frontend Standards (Next.js, TypeScript, Tailwind)</h4>
-                        <ul>
-                            <li>TypeScript for type safety and error detection.</li>
-                            <li>Functional components only.</li>
-                            <li>Modular folder structure: components, lib/utils, services, hooks, styles.</li>
-                            <li>API routes: modularize logic, handle errors gracefully, use middleware.</li>
-                            <li>Code splitting/lazy loading for performance.</li>
-                            <li>SSR vs SSG: SSR for dynamic, SSG for static.</li>
-                            <li>State management: use hooks/context before third-party libs.</li>
-                            <li>Tailwind CSS for styling; avoid inline styles.</li>
-                            <li>Testing: Jest and React Testing Library for unit/component tests.</li>
-                            <li>CI/CD: GitHub Actions for lint/test on every push/merge.</li>
-                            <li>Security: Validate/sanitize input, encode output, keep dependencies updated, robust auth, enforce HTTPS.</li>
-                        </ul>
-                        <h4 class="yellow-heading">Backend Standards</h4>
-                        <ul>
-                            <li>Use constants for free strings.</li>
-                            <li>Optimized queries for native queries.</li>
-                            <li>Centralized error messages/codes; proper error handling.</li>
-                            <li>Add APIs/config to config store; make properties configurable.</li>
-                            <li>Feature flags for new features; version increment for breakable changes.</li>
-                            <li>Remove commented/dead code; avoid API calls in loops.</li>
-                            <li>Threading for long-running logic.</li>
-                            <li>Descriptive camelCase variable names.</li>
-                            <li>Consistent formatting; max 20 lines per method, 200 lines per class.</li>
-                            <li>Modular, reusable, extensible classes; SOLID principles.</li>
-                            <li>No circular dependencies; thorough null checks and utility use.</li>
-                            <li>Logging with masking for sensitive info; info logs for non-sensitive.</li>
-                            <li>Limit method arguments; use beans if >5.</li>
-                            <li>Resource management (try-with-resources); transactional/asynchronous methods as appropriate.</li>
-                            <li>Mandatory documentation and copyright statement.</li>
-                        </ul>
                         <h4 class="yellow-heading">Testing & Quality Assurance</h4>
                         <ul>
                             <li>Local testing before integration.</li>
