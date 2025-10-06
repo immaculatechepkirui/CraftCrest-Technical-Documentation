@@ -187,7 +187,7 @@ body {
 }
 .flow-preview {
     display: flex;
-    gap: 38px;
+    gap: 18px;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 25px;
