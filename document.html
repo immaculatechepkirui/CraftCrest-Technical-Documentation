@@ -25,6 +25,7 @@
                 <li><a href="#backend"><i class="fas fa-server"></i>Backend</a></li>
                 <li><a href="#deployment"><i class="fas fa-cloud-upload-alt"></i>Deployment</a></li>
                 <li><a href="#security-qa-glossary"><i class="fas fa-shield-alt"></i>Security</a></li>
+                <li><a href="#standards"><i class="fas fa-book"></i>Standards</a></li>
             </ul>
         </aside>
         <div class="main-content">
@@ -82,36 +83,29 @@
                         <h2>Getting Started</h2>
                     </div>
                     <div class="doc-section">
+                        <h4 class="yellow-heading">Architecture</h4>
+                        <ul>
+                            <li><strong>Frontend:</strong> Next.js (React), Tailwind CSS, TypeScript</li>
+                            <li><strong>Backend:</strong> Python 3.10+, Django, Django REST Framework</li>
+                            <li><strong>Database:</strong> PostgreSQL 14+</li>
+                            <li><strong>APIs:</strong> M-Pesa Daraja for payments, LocationIQ for geolocation</li>
+                        </ul>
+                        <p>
+                            The system architecture is designed to separate concerns between frontend, backend, and data storage, ensuring scalability, maintainability, and security. All interactions between frontend and backend occur over secured RESTful APIs, while sensitive operations (like payments) are handled via trusted external APIs.
+                        </p>
+                    </div>
+                    <div class="doc-section">
                         <h4 class="yellow-heading">Prerequisites</h4>
                         <ul>
                             <li><strong>Hardware:</strong> Mobile devices for users (smartphones with GPS)</li>
-                            <li><strong>Software:</strong>
-                                <ul>
-                                    <li>Frontend: Next.js (React framework for web and mobile app front-end)</li>
-                                    <li>Backend: Python 3.10+ (Django REST Framework for API)</li>
-                                    <li>Database: PostgreSQL 14+</li>
-                                </ul>
-                            </li>
                             <li><strong>Network:</strong> Stable internet connection (Wi-Fi or mobile data) for app usage and API calls</li>
                         </ul>
                     </div>
                     <div class="doc-section">
-                        <h4 class="yellow-heading">Installation/Setup</h4>
-                        <h5>Backend</h5>
-                        <ol>
-                            <li>Clone the CraftCrest backend repository</li>
-                            <li>Install dependencies (Python packages, database drivers)</li>
-                            <li>Configure environment variables for database connections, M-Pesa API credentials, LocationIQ API keys</li>
-                            <li>Run database migrations for PostgreSQL setup</li>
-                            <li>Start the backend API server</li>
-                        </ol>
-                        <h5>Frontend</h5>
-                        <ol>
-                            <li>Clone the CraftCrest frontend repository</li>
-                            <li>Install Node.js dependencies for Next.js project</li>
-                            <li>Configure API endpoints and environment variables</li>
-                            <li>Run the frontend development server for testing locally or build for production deployment</li>
-                        </ol>
+                        <h4 class="yellow-heading">Onboarding Guidance</h4>
+                        <p>
+                            All new team members should start by reading this documentation thoroughly. It is designed to be comprehensive enough for you to contribute to any part of the system without needing to reach out for help. If you find any section unclear, please update this documentation as you learn more.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -134,13 +128,12 @@
                 </div>
             </section>
 
-            <!-- System Overview -->
             <section id="system-overview" class="section">
                 <div class="container">
                     <div class="section-title padd-15">
                         <h2>System Overview</h2>
                     </div>
-                    <div class="overview-card" onclick="window.open('https://lucid.app/lucidspark/abe8c4de-af49-430f-93f8-7a9c8021719e/edit?invitationId=inv_98bc3c7d-c5bf-4032-9961-9491cd823bcb&page=0_0#/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View cture Diagram">
+                    <div class="overview-card" onclick="window.open('https://lucid.app/lucidspark/abe8c4de-af49-430f-93f8-7a9c8021719e/edit?invitationId=inv_98bc3c7d-c5bf-4032-9961-9491cd823bcb&page=0_0#/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View Architecture Diagram">
                         <img src="images/system-architecture.jpg" alt="System Architecture Diagram" />
                         <span class="overview-label">System Architecture Diagram</span>
                     </div>
@@ -213,6 +206,15 @@
                         </ul>
                     </div>
                     <div class="doc-section">
+                        <h4 class="yellow-heading">Installation & Setup</h4>
+                        <ol>
+                            <li>Clone the CraftCrest frontend repository</li>
+                            <li>Install Node.js dependencies for Next.js project</li>
+                            <li>Configure API endpoints and environment variables</li>
+                            <li>Run the frontend development server for testing locally or build for production deployment</li>
+                        </ol>
+                    </div>
+                    <div class="doc-section">
                         <h4 class="yellow-heading">Deployment</h4>
                         <ul>
                             <li><strong>Platform:</strong> Vercel</li>
@@ -278,6 +280,16 @@
                         </ul>
                     </div>
                     <div class="doc-section">
+                        <h4 class="yellow-heading">Installation & Setup</h4>
+                        <ol>
+                            <li>Clone the CraftCrest backend repository</li>
+                            <li>Install dependencies (Python packages, database drivers)</li>
+                            <li>Configure environment variables for database connections, M-Pesa API credentials, LocationIQ API keys</li>
+                            <li>Run database migrations for PostgreSQL setup</li>
+                            <li>Start the backend API server</li>
+                        </ol>
+                    </div>
+                    <div class="doc-section">
                         <h4 class="yellow-heading">Testing</h4>
                         <ul>
                             <li>Framework: Django Test Framework</li>
@@ -285,6 +297,22 @@
                             <li>Run tests command: <code>python manage.py test</code></li>
                             <li>Includes unit tests for models, views, serializers, and API endpoints</li>
                         </ul>
+                        <h5 style="color:#EBDB15;margin-top:15px;">Sample Unit Test (models.py)</h5>
+<pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
+from django.test import TestCase
+from .models import User
+
+class UserModelTest(TestCase):
+    def test_create_user(self):
+        user = User.objects.create(
+            full_name='Test User',
+            email='test@example.com',
+            phone='0712345678',
+            user_type='artisan'
+        )
+        self.assertEqual(user.full_name, 'Test User')
+        self.assertEqual(user.user_type, 'artisan')
+</code></pre>
                     </div>
                     <div class="doc-section">
                         <h4 class="yellow-heading">Deployment</h4>
@@ -301,6 +329,12 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">API Documentation</h4>
+                        <p>
+                            <a href="https://craft-crest-1191648a42bc.herokuapp.com/api/swagger/" target="_blank" style="color:#EBDB15;font-weight:bold;">View the Swagger/OpenAPI documentation</a>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -372,6 +406,38 @@
                             <li><strong>Mobile App:</strong> Mobile App for offline use.</li>
                             <li><strong>JWT:</strong> JSON Web Token for authentication.</li>
                         </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="standards" class="section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2>Naming & Coding Standards</h2>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">General Standards</h4>
+                        <ul>
+                            <li>Use <strong>CamelCase</strong> for class names and <strong>snake_case</strong> for variables and functions in Python.</li>
+                            <li>Use <strong>PascalCase</strong> for React component names and <strong>camelCase</strong> for variables/functions in JS/TS.</li>
+                            <li>File names in Python should be <strong>snake_case</strong>. In JS/TS, use <strong>PascalCase</strong> for components.</li>
+                            <li>Always include docstrings or JSDoc comments for functions and classes.</li>
+                            <li>Follow PEP8 for Python code, ESLint and Prettier for JS/TS.</li>
+                            <li>Commit messages must follow the <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">Conventional Commits</a> standard.</li>
+                            <li>All environment/config secrets must be stored securely, never hardcoded.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Python Example</h4>
+<pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
+class ArtisanProfile(models.Model):
+    full_name = models.CharField(max_length=100)
+    national_id = models.CharField(max_length=20)
+    # ...
+</code></pre>
+                        <h4 class="yellow-heading">React/JS/TS Example</h4>
+<pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
+function RegistrationForm({ onSubmit }) {
+  // ...
+}
+</code></pre>
                     </div>
                 </div>
             </section>
