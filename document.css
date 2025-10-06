@@ -80,18 +80,31 @@ body {
     background: #111;
 }
 
-/* Add padding between navigation and page content for slide-in sections */
 .container {
     padding-left: 18px;
     padding-right: 18px;
 }
 
 .section {
-    margin-bottom: 30px;
-    display: none;
+    position: absolute;
+    left: 220px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #111;
+    min-height: 100vh;
+    max-height: 100vh;
+    opacity: 0;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+    transition: opacity 0.4s;
     box-sizing: border-box;
     padding-top: 0;
+    overflow-y: auto;  
+    overflow-x: hidden; 
 }
+
 .section.active {
     display: block;
 }
@@ -245,6 +258,16 @@ body {
     text-align: center;
     padding: 10px 0 4px 0;
 }
+.main-content {
+    flex: 1;
+    margin-left: 220px;
+    padding: 50px 35px 35px 35px;
+    min-width: 0;
+    background: #111;
+    position: relative;
+    height: 100vh; 
+    overflow: hidden; 
+}
 .database-preview img {
     width: 94%;
     height: 110px;
@@ -290,7 +313,8 @@ pre {
     word-break: break-word;
 }
 @media (max-width: 900px) {
-    .main-content { padding: 30px 8px 20px 8px; }
+    @media (max-width: 900px) {
+    .main-content { padding: 30px 8px 20px 8px; height: 100vh; }
     .sidebar { width: 56px; min-width: 56px; }
     .sidebar-logo img { width: 40px; height: 40px; }
     .sidebar-title { display: none; }
@@ -298,7 +322,7 @@ pre {
     .sidebar-nav a i { margin-right: 0; }
 }
 @media (max-width: 650px) {
-    .main-content { margin-left: 0; }
+    .main-content { margin-left: 0; height: 100vh; }
     .sidebar { position: static; width: 100vw; min-width: 0; height: auto; flex-direction: row; border-right: none; border-bottom: 2px solid #5D070D;}
     .sidebar-logo { flex-direction: row; margin-bottom: 0; margin-right: 16px;}
     .flow-preview, .overview-card, .database-preview { width: 100%; min-width: 180px; }
