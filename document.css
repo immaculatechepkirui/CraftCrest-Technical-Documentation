@@ -75,7 +75,7 @@ body {
 .main-content {
     flex: 1;
     margin-left: 220px;
-    padding: 50px 15px 35px 15px; /* <-- Only 15px space between sidebar and content */
+    padding: 50px 5px 15px 5px;
     min-width: 0;
     background: #111;
     position: relative;
@@ -122,7 +122,7 @@ body {
 
 .section {
     position: absolute;
-    left: 220px;
+    left: 120px;
     top: 0;
     right: 0;
     bottom: 0;
