@@ -74,15 +74,14 @@ body {
 }
 .main-content {
     flex: 1;
-    margin-left: 220px;
-    padding: 50px 15px 35px 15px; /* <-- Only 15px space between sidebar and content */
+    margin-left: 20px;
+    padding: 35px 8px 20px 8px; 
     min-width: 0;
     background: #111;
     position: relative;
     height: 100vh; 
     overflow: hidden; 
 }
-
 .container {
     padding-left: 0;
     padding-right: 0;
