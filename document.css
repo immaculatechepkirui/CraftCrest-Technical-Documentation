@@ -35,7 +35,6 @@ body {
     height: 65px;
     margin-bottom: 6px;
     object-fit: cover;
-    /* box-shadow: 0 1px 4px #5d070d70; */
 }
 .sidebar-title {
     color: #EBDB15;
@@ -80,9 +79,18 @@ body {
     min-width: 0;
     background: #111;
 }
+
+/* Add padding between navigation and page content for slide-in sections */
+.container {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
 .section {
     margin-bottom: 30px;
     display: none;
+    box-sizing: border-box;
+    padding-top: 0;
 }
 .section.active {
     display: block;
@@ -109,6 +117,8 @@ body {
     display: block;
     pointer-events: none;
     transition: opacity 0.4s;
+    box-sizing: border-box;
+    padding-top: 0;
 }
 .section.active {
     opacity: 1;
@@ -274,6 +284,10 @@ code {
     border-radius: 3px;
     padding: 2px 7px;
     font-size: 0.98em;
+}
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 @media (max-width: 900px) {
     .main-content { padding: 30px 8px 20px 8px; }
