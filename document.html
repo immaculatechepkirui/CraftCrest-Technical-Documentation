@@ -19,11 +19,9 @@
                 <li><a href="#version-overview" class="active"><i class="fas fa-history"></i>Version History</a></li>
                 <li><a href="#getting-started"><i class="fas fa-rocket"></i>Getting Started</a></li>
                 <li><a href="#system-flows"><i class="fas fa-project-diagram"></i>System Flows</a></li>
-                <li><a href="#system-overview"><i class="fas fa-sitemap"></i>System Overview</a></li>
                 <li><a href="#database"><i class="fas fa-database"></i>Database</a></li>
                 <li><a href="#frontend"><i class="fab fa-react"></i>Frontend</a></li>
                 <li><a href="#backend"><i class="fas fa-server"></i>Backend</a></li>
-                <li><a href="#deployment"><i class="fas fa-cloud-upload-alt"></i>Deployment</a></li>
                 <li><a href="#security-qa-glossary"><i class="fas fa-shield-alt"></i>Security</a></li>
                 <li><a href="#standards"><i class="fas fa-book"></i>Standards</a></li>
             </ul>
@@ -93,6 +91,10 @@
                         <p>
                             The system architecture is designed to separate concerns between frontend, backend, and data storage, ensuring scalability, maintainability, and security. All interactions between frontend and backend occur over secured RESTful APIs, while sensitive operations (like payments) are handled via trusted external APIs.
                         </p>
+                        <div class="overview-card" onclick="window.open('https://lucid.app/lucidspark/abe8c4de-af49-430f-93f8-7a9c8021719e/edit?invitationId=inv_98bc3c7d-c5bf-4032-9961-9491cd823bcb&page=0_0#/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View Architecture Diagram">
+                            <img src="images/system-architecture.jpg" alt="System Architecture Diagram" />
+                            <span class="overview-label">System Architecture Diagram</span>
+                        </div>
                     </div>
                     <div class="doc-section">
                         <h4 class="yellow-heading">Prerequisites</h4>
@@ -124,18 +126,6 @@
                             <img src="images/user-flow.jpg" alt="Buyer User Flow" />
                             <span class="flow-label">Buyer User Flow</span>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="system-overview" class="section">
-                <div class="container">
-                    <div class="section-title padd-15">
-                        <h2>System Overview</h2>
-                    </div>
-                    <div class="overview-card" onclick="window.open('https://lucid.app/lucidspark/abe8c4de-af49-430f-93f8-7a9c8021719e/edit?invitationId=inv_98bc3c7d-c5bf-4032-9961-9491cd823bcb&page=0_0#/edit?tab=t.0#heading=h.wj0gbbeaqndb', '_blank')" title="View Architecture Diagram">
-                        <img src="images/system-architecture.jpg" alt="System Architecture Diagram" />
-                        <span class="overview-label">System Architecture Diagram</span>
                     </div>
                 </div>
             </section>
@@ -196,36 +186,41 @@
                             <li><code>/pages</code>: Route-specific pages (e.g., <code>Dashboard.tsx</code>, <code>Catalog.tsx</code>).</li>
                             <li><code>/utils</code>: API call logic.</li>
                             <li><code>/public</code>: Images.</li>
+                            <li><code>/lib</code>, <code>/services</code>, <code>/hooks</code>, <code>/styles</code>: Further breakdown for scalability and collaboration.</li>
                         </ul>
                     </div>
                     <div class="doc-section">
-                        <h4 class="yellow-heading">Testing</h4>
+                        <h4 class="yellow-heading">Coding Standards</h4>
                         <ul>
-                            <li><strong>Jest and ts-jest:</strong> Unit tests (e.g., <code>test/components/RegistrationForm.test.tsx</code>).</li>
-                            <li>Run Tests: <code>npm test</code></li>
+                            <li>Embrace TypeScript for type safety and early error detection.</li>
+                            <li>Use functional components for consistency and performance.</li>
+                            <li>camelCase for variables and functions; PascalCase for component names; SCREAMING_SNAKE_CASE for constants.</li>
+                            <li>One component per file. Group files by feature/module for maintainability.</li>
+                            <li>Use Jest and React Testing Library for unit tests; add tests for each new component or logic.</li>
+                            <li>Use Tailwind CSS for all styling. Avoid inline styles unless absolutely necessary.</li>
+                            <li>Modularize API logic; handle errors gracefully and use middleware for common concerns.</li>
+                            <li>Leverage code splitting and lazy loading for improved performance.</li>
+                            <li>Balance SSR and SSG for performance.</li>
+                            <li>Use React hooks and Context API for state management. Prefer lightweight solutions before third-party libraries.</li>
+                            <li>Maintain code consistency with ESLint and Prettier.</li>
+                            <li>Automated testing and CI/CD via GitHub Actions.</li>
+                            <li>Security: Validate/sanitize input, encode output, update dependencies, robust auth, enforce HTTPS.</li>
                         </ul>
-                    </div>
-                    <div class="doc-section">
-                        <h4 class="yellow-heading">Installation & Setup</h4>
-                        <ol>
-                            <li>Clone the CraftCrest frontend repository</li>
-                            <li>Install Node.js dependencies for Next.js project</li>
-                            <li>Configure API endpoints and environment variables</li>
-                            <li>Run the frontend development server for testing locally or build for production deployment</li>
-                        </ol>
                     </div>
                     <div class="doc-section">
                         <h4 class="yellow-heading">Deployment</h4>
                         <ul>
                             <li><strong>Platform:</strong> Vercel</li>
-                            <li><strong>Instructions:</strong>
-                                <ul>
-                                    <li>Install dependencies: <code>npm install</code></li>
-                                    <li>Build project: <code>npm run build</code></li>
-                                    <li>Deploy: <code>vercel --prod</code> or push to GitHub repo linked to Vercel.</li>
-                                    <li>Verify at <a href="https://craftcrestapp.vercel.app/" target="_blank">https://craftcrestapp.vercel.app/</a></li>
-                                </ul>
-                            </li>
+                            <li><strong>Branch:</strong> Auto-deployment from main</li>
+                            <li><strong>Environment Variables:</strong> Managed securely via .env in Vercel dashboard</li>
+                            <li>Build & Preview: Each push triggers preview builds for PRs and deploys on merge to main</li>
+                        </ul>
+                        <h4 class="yellow-heading">CI/CD</h4>
+                        <ul>
+                            <li>Tool: GitHub Actions</li>
+                            <li>Pre-Deployment: All codebases run tests, build, and lint checks before deploy</li>
+                            <li>Automation: Automatic deployment on merge to main</li>
+                            <li>Status: Build and test status visible in PRs and repository dashboard</li>
                         </ul>
                     </div>
                 </div>
@@ -265,18 +260,34 @@
                                     <li><code>/urls</code> &mdash; Route definitions</li>
                                     <li><code>/permissions</code> &mdash; Custom permissions and access control logic</li>
                                     <li><code>/tests</code> &mdash; Unit and integration tests</li>
+                                    <li><code>/static</code> &mdash; Static files (images, docs)</li>
                                 </ul>
                             </li>
-                            <li><code>/static</code> &mdash; Static files if needed (e.g., images, docs)</li>
                         </ul>
                     </div>
                     <div class="doc-section">
-                        <h4 class="yellow-heading">Dependencies</h4>
+                        <h4 class="yellow-heading">Coding Standards</h4>
                         <ul>
-                            <li>Django REST Framework (DRF): For creating REST APIs</li>
-                            <li>psycopg2: PostgreSQL database adapter for Python</li>
-                            <li>djangorestframework-simplejwt or similar: JWT authentication for secured token-based access</li>
-                            <li>requests or similar for external API calls (e.g., M-Pesa, LocationIQ)</li>
+                            <li>Replace free strings with constants.</li>
+                            <li>Use optimized queries for native queries.</li>
+                            <li>Validate error message handling, proper error reporting.</li>
+                            <li>Store error messages in a centralized config store.</li>
+                            <li>Add new APIs/configuration to config store.</li>
+                            <li>Make properties configurable where possible.</li>
+                            <li>Version increment for breakable changes.</li>
+                            <li>Use feature flags for new features.</li>
+                            <li>Remove commented or dead code.</li>
+                            <li>Avoid API calls in loops; use threading framework for long-running logic.</li>
+                            <li>Descriptive variable names using camelCase.</li>
+                            <li>Consistent code formatting, no stale code.</li>
+                            <li>Max 20 lines per method, max 200 lines per class.</li>
+                            <li>Modular, reusable classes; open for extension, closed for modification.</li>
+                            <li>Single Responsibility and Interface Segregation Principles.</li>
+                            <li>No circular dependencies; proper null checks and utility classes for checks.</li>
+                            <li>Logging with masking for sensitive info, use info logs for other messages.</li>
+                            <li>Limit method arguments; use beans if more than 5.</li>
+                            <li>Proper resource management and try-with-resources.</li>
+                            <li>Mandatory documentation and copyright statement.</li>
                         </ul>
                     </div>
                     <div class="doc-section">
@@ -329,42 +340,19 @@ class UserModelTest(TestCase):
                                 </ul>
                             </li>
                         </ul>
-                    </div>
-                    <div class="doc-section">
-                        <h4 class="yellow-heading">API Documentation</h4>
-                        <p>
-                            <a href="http://127.0.0.1:8000/api/schema/swagger-ui/" target="_blank" style="color:#EBDB15;font-weight:bold;">View the Swagger/OpenAPI documentation</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="deployment" class="section">
-                <div class="container">
-                    <div class="section-title padd-15">
-                        <h2>Deployment</h2>
-                    </div>
-                    <div class="doc-section">
-                        <h4 class="yellow-heading">Frontend Deployment</h4>
-                        <ul>
-                            <li>Platform: Vercel</li>
-                            <li>Branch: Auto-deployment from main</li>
-                            <li>Environment Variables: Managed securely via .env in Vercel dashboard</li>
-                            <li>Build & Preview: Each push triggers preview builds for PRs and deploys on merge to main</li>
-                        </ul>
-                        <h4 class="yellow-heading">Backend Deployment</h4>
-                        <ul>
-                            <li>Platform: Django REST API deployed on Heroku</li>
-                            <li>Environment Variables: Configured in Heroku dashboard for security</li>
-                            <li>Scaling: Automatic scaling via Heroku dynos for increased demand</li>
-                        </ul>
-                        <h4 class="yellow-heading">CI/CD Pipeline</h4>
+                        <h4 class="yellow-heading">CI/CD</h4>
                         <ul>
                             <li>Tool: GitHub Actions</li>
                             <li>Pre-Deployment: All codebases run tests, build, and lint checks before deploy</li>
                             <li>Automation: Automatic deployment on merge to main</li>
                             <li>Status: Build and test status visible in PRs and repository dashboard</li>
                         </ul>
+                    </div>
+                    <div class="doc-section">
+                        <h4 class="yellow-heading">API Documentation</h4>
+                        <p>
+                            <a href="http://127.0.0.1:8000/api/schema/swagger-ui/" target="_blank" style="color:#EBDB15;font-weight:bold;">View the Swagger/OpenAPI documentation</a>
+                        </p>
                     </div>
                 </div>
             </section>
@@ -399,6 +387,16 @@ class UserModelTest(TestCase):
                                 </ul>
                             </li>
                         </ul>
+                        <h4 class="yellow-heading">Performance, Scalability, Reliability (PSR)</h4>
+                        <ul>
+                            <li>Performance optimization in every use-case.</li>
+                            <li>Data efficiency: minimal retrieval for UI.</li>
+                            <li>Response time: <2s for every call.</li>
+                            <li>Concurrent user execution: ≥200 users, throughput ≥1000.</li>
+                            <li>CPU utilization <80%, Memory <75%, Heap <50%.</li>
+                            <li>Graceful degradation and self-recovery mechanism.</li>
+                            <li>High availability and fault tolerance.</li>
+                        </ul>
                     </div>
                     <div class="doc-section">
                         <h4 class="yellow-heading">Glossary</h4>
@@ -412,109 +410,87 @@ class UserModelTest(TestCase):
             <section id="standards" class="section">
                 <div class="container">
                     <div class="section-title padd-15">
-                        <h2>Naming & Coding Standards</h2>
+                        <h2>Coding Standards & Best Practices</h2>
                     </div>
                     <div class="doc-section">
                         <h4 class="yellow-heading">General Standards</h4>
                         <ul>
-                            <li>Use <strong>CamelCase</strong> for class names and <strong>snake_case</strong> for variables and functions in Python.</li>
-                            <li>Use <strong>PascalCase</strong> for React component names and <strong>camelCase</strong> for variables/functions in JS/TS.</li>
-                            <li>File names in Python should be <strong>snake_case</strong>. In JS/TS, use <strong>PascalCase</strong> for components.</li>
-                            <li>Always include docstrings or JSDoc comments for functions and classes.</li>
-                            <li>Follow PEP8 for Python code, ESLint and Prettier for JS/TS.</li>
-                            <li>Commit messages must follow the <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">Conventional Commits</a> standard.</li>
-                            <li>All environment/config secrets must be stored securely, never hardcoded.</li>
+                            <li>Linting: Prettier + ESLint (frontend), flake8 and black (backend).</li>
+                            <li>Documentation: Use JSDoc (frontend) or docstrings (backend); update README and feature docs for major changes.</li>
+                            <li>Pull Requests: Write clear summaries, link issues (Fixes #), always request at least one review.</li>
+                            <li>Config files: Use YAML format, proper indentation and validation; store error messages and API config centrally.</li>
+                            <li>Version Control: Increment version for breakable changes, use feature flags for new features.</li>
                         </ul>
-                        <h4 class="yellow-heading">Python Example</h4>
-<pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
-class ArtisanProfile(models.Model):
-    user = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        limit_choices_to={'user_type': 'ARTISAN'}
-    )
-    fulfillment_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    rejection_rate = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    average_rating = models.DecimalField(max_digits=3, decimal_places=1, default=0)
-    days_active = models.PositiveIntegerField(default=0)
-    completed_orders = models.PositiveIntegerField(default=0)
-    is_verified = models.BooleanField(default=False)
-    weekly_order_count = models.PositiveIntegerField(default=0)
-    order_value_limit = models.DecimalField(max_digits=10, decimal_places=2, default=2000, null=True, blank=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6, blank=True, null=True)
-
-    def __str__(self):
-        return f"Artisan Profile for {self.user.email}"
-
-    def clean(self):
-        if self.user.user_type != 'ARTISAN':
-            raise ValidationError("ArtisanProfile can only be linked to an artisan user.")
-
-    def update_verification_status(self):
-        if (
-            self.fulfillment_rate >= 90
-            and self.rejection_rate <= 10
-            and self.average_rating >= 4.0
-            and self.days_active >= 85
-            and self.completed_orders >= 10
-        ):
-            self.is_verified = True
-            self.order_value_limit = None
-        else:
-            self.is_verified = False
-            self.order_value_limit = 2000
-        self.save()
-
-    def can_take_order(self, order_value):
-        if self.is_verified:
-            return True
-        return order_value <= 2000 and self.weekly_order_count < 5
-
-</code></pre>
-                        <h4 class="yellow-heading">Next/JS/TS Example</h4>
-<pre style="background:#222;color:#EBDB15;border-radius:5px;padding:12px;"><code>
-'use client';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
-import Image from 'next/image';
-import Button, { ButtonVariants } from "../shared-components/Button";
-import useLogin from '../hooks/useFetchLogin';
-export default function LoginPage() {
-  const router = useRouter();
-  const { login, loading, error } = useLogin();
-  const [formData, setFormData] = useState({ email: '', password: '' });
-  const [showPassword, setShowPassword] = useState(false);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    setSuccessMessage(null);
-  };
-  const handleSubmit = async (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-    const { email, password } = formData;
-    if (!email.trim() || !password) {
-      setSuccessMessage(null);
-      return;
-    }
-    const result = await login({ email, password });
-    if (result?.token) {
-      setSuccessMessage('Login successful! Redirecting...');
-      setTimeout(() => {
-        router.push('/dashboard');
-      }, 1000);
-    } else {
-      setSuccessMessage(null);
-    }
-  };
-  const handleButtonClick = () => {
-    if (!loading) {
-      handleSubmit();
-    }
-  };
-</code></pre>
+                        <h4 class="yellow-heading">Naming Conventions</h4>
+                        <ul>
+                            <li>Frontend: camelCase (variables/functions), PascalCase (components), SCREAMING_SNAKE_CASE (constants).</li>
+                            <li>Backend: CamelCase (classes/interfaces), snake_case (variables/functions), descriptive names.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Frontend Standards (Next.js, TypeScript, Tailwind)</h4>
+                        <ul>
+                            <li>TypeScript for type safety and error detection.</li>
+                            <li>Functional components only.</li>
+                            <li>Modular folder structure: components, lib/utils, services, hooks, styles.</li>
+                            <li>API routes: modularize logic, handle errors gracefully, use middleware.</li>
+                            <li>Code splitting/lazy loading for performance.</li>
+                            <li>SSR vs SSG: SSR for dynamic, SSG for static.</li>
+                            <li>State management: use hooks/context before third-party libs.</li>
+                            <li>Tailwind CSS for styling; avoid inline styles.</li>
+                            <li>Testing: Jest and React Testing Library for unit/component tests.</li>
+                            <li>CI/CD: GitHub Actions for lint/test on every push/merge.</li>
+                            <li>Security: Validate/sanitize input, encode output, keep dependencies updated, robust auth, enforce HTTPS.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Backend Standards</h4>
+                        <ul>
+                            <li>Use constants for free strings.</li>
+                            <li>Optimized queries for native queries.</li>
+                            <li>Centralized error messages/codes; proper error handling.</li>
+                            <li>Add APIs/config to config store; make properties configurable.</li>
+                            <li>Feature flags for new features; version increment for breakable changes.</li>
+                            <li>Remove commented/dead code; avoid API calls in loops.</li>
+                            <li>Threading for long-running logic.</li>
+                            <li>Descriptive camelCase variable names.</li>
+                            <li>Consistent formatting; max 20 lines per method, 200 lines per class.</li>
+                            <li>Modular, reusable, extensible classes; SOLID principles.</li>
+                            <li>No circular dependencies; thorough null checks and utility use.</li>
+                            <li>Logging with masking for sensitive info; info logs for non-sensitive.</li>
+                            <li>Limit method arguments; use beans if >5.</li>
+                            <li>Resource management (try-with-resources); transactional/asynchronous methods as appropriate.</li>
+                            <li>Mandatory documentation and copyright statement.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Testing & Quality Assurance</h4>
+                        <ul>
+                            <li>Local testing before integration.</li>
+                            <li>Collaborative testing (DEV + QA); requirement coverage.</li>
+                            <li>Performance optimization, data efficiency, response time <2s.</li>
+                            <li>≥200 concurrent users, throughput ≥1000, CPU <80%, Memory <75%, Heap <50%.</li>
+                            <li>Graceful degradation, self-recovery, high availability, fault tolerance.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Best Practices</h4>
+                        <ul>
+                            <li>Keep functions/components small and focused.</li>
+                            <li>Prefer composition over inheritance.</li>
+                            <li>Remove unused/commented code regularly.</li>
+                            <li>Run lint and tests before pushing/merging.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Pull Request Reviews</h4>
+                        <ul>
+                            <li>Peer Review: Team collaboration, feedback on reusability, impact, test scenarios.</li>
+                            <li>Architecture Review: Security, performance, scalability, usability.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Testing Requirements</h4>
+                        <ul>
+                            <li>Local, integration, collaborative testing; requirement coverage.</li>
+                            <li>DEV + QA teams to create comprehensive test cases.</li>
+                        </ul>
+                        <h4 class="yellow-heading">Performance, Scalability, Reliability (PSR)</h4>
+                        <ul>
+                            <li>Performance optimization in every use-case.</li>
+                            <li>Minimal data retrieval for UI.</li>
+                            <li>Response time <2s; ≥200 concurrent users, throughput ≥1000.</li>
+                            <li>CPU utilization <80%, Memory <75%, Heap <50%.</li>
+                            <li>Graceful degradation, self-recovery, high availability, fault tolerance.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
