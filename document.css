@@ -45,7 +45,7 @@ body {
 .sidebar-nav {
     width: 100%;
     list-style: none;
-    padding: 0;
+    : 0;
     margin: 0;
 }
 .sidebar-nav li {
@@ -54,7 +54,7 @@ body {
 .sidebar-nav a {
     display: flex;
     align-items: center;
-    padding: 12px 28px;
+    padding: 12px 18px;
     color: #fff;
     font-size: 1.1rem;
     font-weight: 700;
@@ -306,7 +306,7 @@ pre {
     word-break: break-word;
 }
 @media (max-width: 900px) {
-    .main-content { padding: 30px 8px 20px 8px; height: 100vh; }
+    .main-content { padding: 10px 8px 10px 8px; height: 100vh; }
     .sidebar { width: 56px; min-width: 56px; }
     .sidebar-logo img { width: 40px; height: 40px; }
     .sidebar-title { display: none; }
