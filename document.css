@@ -75,14 +75,17 @@ body {
 .main-content {
     flex: 1;
     margin-left: 220px;
-    padding: 50px 35px 35px 35px;
+    padding: 50px 15px 35px 15px; /* <-- Only 15px space between sidebar and content */
     min-width: 0;
     background: #111;
+    position: relative;
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 .container {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .section {
@@ -258,16 +261,6 @@ body {
     text-align: center;
     padding: 10px 0 4px 0;
 }
-.main-content {
-    flex: 1;
-    margin-left: 220px;
-    padding: 50px 35px 35px 35px;
-    min-width: 0;
-    background: #111;
-    position: relative;
-    height: 100vh; 
-    overflow: hidden; 
-}
 .database-preview img {
     width: 94%;
     height: 110px;
@@ -313,7 +306,6 @@ pre {
     word-break: break-word;
 }
 @media (max-width: 900px) {
-    @media (max-width: 900px) {
     .main-content { padding: 30px 8px 20px 8px; height: 100vh; }
     .sidebar { width: 56px; min-width: 56px; }
     .sidebar-logo img { width: 40px; height: 40px; }
