@@ -182,7 +182,13 @@ body {
     box-shadow: 0 4px 36px #5d070d50;
     margin-top: 24px;
 }
-.system-architecture-image {
+.system-architecture-image-link,
+.database-image-link {
+    text-decoration: none;
+    display: block;
+}
+.system-architecture-image,
+.database-full-image {
     width: 98%;
     max-width: 650px;
     margin: 26px auto 18px auto;
@@ -193,7 +199,8 @@ body {
     border-radius: 14px;
     transition: box-shadow 0.25s;
 }
-.system-architecture-image img {
+.system-architecture-image img,
+.database-full-image img {
     width: 100%;
     max-width: 650px;
     height: auto;
@@ -204,12 +211,14 @@ body {
     display: block;
     margin: 0 auto;
 }
-.system-architecture-image:hover img {
+.system-architecture-image:hover img,
+.database-full-image:hover img {
     transform: scale(1.18);
     box-shadow: 0 8px 36px #5d070d80;
     z-index: 10;
 }
-.system-architecture-image .overview-label {
+.system-architecture-image .overview-label,
+.database-full-image .db-label {
     color: #EBDB15;
     font-weight: 700;
     font-size: 1.08rem;
