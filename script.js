@@ -164,33 +164,33 @@ customersArrow.addEventListener('click', () => {
   }
 });
 
-const teamMembers = [
-  {
-    name: "Immaculate Chepkirui",
-    role: "Software Engineer",
-    image: "https://ca.slack-edge.com/T08BR1M9D6V-U08GQ6GKG84-8faac0398f49-512"
-  },
-  {
-    name: "Hani Azanaw",
-    role: "Software Engineer",
-    image: "images/hani-image.jpg"
-  },
-  {
-    name: "Dorothy Mbakaya",
-    role: "Software Engineer",
-    image: "https://ca.slack-edge.com/T08BR1M9D6V-U08CS378D24-5a54bde48fb7-192"
-  },
-  {
-    name: "Jecinta Muhia",
-    role: "Software Engineer",
-    image: "https://ca.slack-edge.com/T08BR1M9D6V-U08G4FL7L9J-c8e363d90ebb-512"
-  },
-  {
-    name: "Daniella Mutuku",
-    role: "Software Engineer",
-    image: "https://ca.slack-edge.com/T08BR1M9D6V-U08C0DF80S1-3653aa026291-512"
-  }
-];
+// const teamMembers = [
+//   {
+//     name: "Immaculate Chepkirui",
+//     role: "Software Engineer",
+//     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08GQ6GKG84-8faac0398f49-512"
+//   },
+//   {
+//     name: "Hani Azanaw",
+//     role: "Software Engineer",
+//     image: "images/hani-image.jpg"
+//   },
+//   {
+//     name: "Dorothy Mbakaya",
+//     role: "Software Engineer",
+//     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08CS378D24-5a54bde48fb7-192"
+//   },
+//   {
+//     name: "Jecinta Muhia",
+//     role: "Software Engineer",
+//     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08G4FL7L9J-c8e363d90ebb-512"
+//   },
+//   {
+//     name: "Daniella Mutuku",
+//     role: "Software Engineer",
+//     image: "https://ca.slack-edge.com/T08BR1M9D6V-U08C0DF80S1-3653aa026291-512"
+//   }
+// ];
 
 const carouselTrack = document.getElementById('carousel-track');
 const teamDots = document.getElementById('team-dots');
